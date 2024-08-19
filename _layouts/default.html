@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html lang="en-US" }}">
+<html lang="en-US">
   <head>
+    <style>
+      .auto-resizable-iframe {
+        max-width: 420px;
+        margin: 0px auto;
+      }
+      .auto-resizable-iframe > div {
+        position: relative;
+        padding-bottom: 75%;
+        height: 0px;
+      }
+      .auto-resizable-iframe iframe {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
     <meta charset="UTF-8">
-
+    
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
@@ -24,7 +42,7 @@
 
     <main id="content" class="main-content" role="main">
       {{ content }}
-      <iframe width="100%" height="56.25%"
+      <iframe
         src="https://www.youtube.com/embed/UVAGAW_CE2k?si=G1JqqrCTMRLg1mCx"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
