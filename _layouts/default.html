@@ -3,8 +3,10 @@
   <head>
     <style>
       main {
-        background-color: #222222;
         color: white;
+      }
+      zero-md {
+        background-color: transparent;
       }
       iframe {
         aspect-ratio: 16 / 9;
@@ -14,27 +16,31 @@
     </style>
     <meta charset="UTF-8">
     
-{% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#222222">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
+    <link rel="stylesheet" href="/assets/css/e10_theme.css">
   </head>
   <body>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
       <h1 class="project-name">e10withadot's stupid webpage</h1>
       <h2 class="project-tagline">low effort template page yay!!!!!!!!!!!!!!!!</h2>
-      <a href="https://www.youtube.com/@e10withadot" class="btn">YouTube channel</a>
-      <a href="https://github.com/e10withadot" class="btn">GitHub page</a>
+      <a href="https://www.youtube.com/@e10withadot" class="btn">YouTube</a>
+      <a href="https://www.reddit.com/u/e10withadot" class="btn">Reddit</a>
+      <a href="https://github.com/e10withadot" class="btn">GitHub</a>
     </header>
 
     <main id="content" class="main-content" role="main">
-      {{ content }}
+      <zero-md src="/README.md">
+        <template>
+          <link rel="stylesheet" href="/assets/css/e10_theme.css"/>
+        </template>
+      </zero-md>
       <iframe
         src="https://www.youtube.com/embed/UVAGAW_CE2k?si=G1JqqrCTMRLg1mCx"
         title="YouTube video player" frameborder="0"
