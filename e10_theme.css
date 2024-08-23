@@ -703,25 +703,25 @@ body::before {
   }
 }
 
-@media (min-height: 720px) and (orientation: landscape) or (min-width: 480px) and (orientation: portrait){
+@media (min-height: 1280px) or (min-width: 1280px) {
   body::before {
     background-image: url("/tile_720.PNG");
   }
 }
 
-@media (min-height: 1080px) and (orientation: landscape) or (min-width: 720px) and (orientation: portrait){
+@media (min-height: 1920px) or (min-width: 1920px) {
   body::before {
     background-image: url("/tile_1080.PNG");
   }
 }
 
-@media (min-height: 1440px) and (orientation: landscape) or (min-width: 1080px) and (orientation: portrait){
+@media (min-height: 2560px) or (min-width: 2560px) {
   body::before {
     background-image: url("/tile_1440.PNG");
   }
 }
 
-@media (min-height: 2160px) and (orientation: landscape) or (min-width: 1440px) and (orientation: portrait){
+@media (min-height: 3840px) or (min-width: 3840px){
   body::before {
     background-image: url("/tile_4k.PNG");
   }
