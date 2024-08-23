@@ -6,4 +6,6 @@ Because it is. I made this in a whim after Tumblr banned my blog. Once I have mo
 * maybe some funny blog posts i dunno
 
 ## Tumblr are idiots and they banned me from their site for no reason.
+> Update: Tumblr has restored the blog. I'm making this my landing page regardless, but you can visit it [here](https://e10withadot.tumblr.com/).
+
 I have been a Tumblr shill for so long and this is how they repay me. Disgusting. I don't wanna sign up to any other socials because the social media landscape is burning up as we speak, and frankly good riddance. Anyways, I got zero clue why they banned me, but it may just be this video down below. I assume they thought I was making a statement about Ukraine (I wasn't lol).
