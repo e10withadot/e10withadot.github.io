@@ -689,8 +689,8 @@ body::before {
   left: -9%;
   z-index: -1;
   background: url("/tile_480.PNG");
-  background-size: 26.667vh;
   background-repeat: repeat;
+  background-size: 26.667vh;
   will-change: transform;
   animation: animatedBackground 60s infinite steps(1800, end);
   transform: rotate(-5deg);
@@ -700,6 +700,7 @@ body::before {
 @media screen and (orientation: landscape) {
   body::before {
     animation: animatedBackground 180s infinite steps(4500, end);
+    background-size: 26.667vw;
   }
 }
 
