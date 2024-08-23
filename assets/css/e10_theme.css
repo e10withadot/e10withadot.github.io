@@ -659,13 +659,68 @@ th {
   box-sizing: border-box;
 }
 
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
 body {
-  padding: 0;
-  margin: 0;
   font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71;
+  color: #ffffff;
+}
+
+main {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(20, 20, 20, 0.7);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 155%;
+  height: 145%;
+  top: -25%;
+  left: -9%;
+  z-index: -1;
+  background: url("/tile_480.PNG");
+  background-size: 26.667rem;
+  background-repeat: repeat;
+  will-change: transform;
+  animation: animatedBackground 180s infinite steps(4500, end);
+  transform: rotate(-5deg);
+  transform-origin: center;
+}
+
+@media (min-height: 720px) {
+  body::before {
+    background-image: url("/tile_720.PNG");
+  }
+}
+
+@media (min-height: 1080px) {
+  body::before {
+    background-image: url("/tile_1080.PNG");
+  }
+}
+
+/* For screens with width 1440px and above */
+@media (min-height: 1440px) {
+  body::before {
+    background-image: url("/tile_1440.PNG");
+  }
+}
+
+/* For screens with width 2160px and above (4K) */
+@media (min-height: 2160px) {
+  body::before {
+    background-image: url("/tile_4k.PNG");
+  }
 }
 
 #skip-to-content {
@@ -809,20 +864,22 @@ a:hover {
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
-    padding: 2rem 6rem;
-    margin: 0 auto;
+    padding: 1rem 3rem;
+    margin: 4rem auto;
     font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .main-content {
-    padding: 2rem 4rem;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
     font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 42em) {
   .main-content {
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
+    margin-top: 2rem;
     font-size: 1rem;
   }
 }
