@@ -689,12 +689,18 @@ body::before {
   left: -9%;
   z-index: -1;
   background: url("/tile_480.PNG");
-  background-size: 26.667rem;
+  background-size: 26.667vh;
   background-repeat: repeat;
   will-change: transform;
-  animation: animatedBackground 180s infinite steps(4500, end);
+  animation: animatedBackground 60s infinite steps(1800, end);
   transform: rotate(-5deg);
   transform-origin: center;
+}
+
+@media screen and (orientation: landscape) {
+  body::before {
+    animation: animatedBackground 180s infinite steps(4500, end);
+  }
 }
 
 @media (min-height: 1280px) or (min-width: 1280px) {
@@ -715,7 +721,7 @@ body::before {
   }
 }
 
-@media (min-height: 3840px) or (min-width: 3840px) {
+@media (min-height: 3840px) or (min-width: 3840px){
   body::before {
     background-image: url("/tile_4k.PNG");
   }
