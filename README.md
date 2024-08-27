@@ -5,7 +5,7 @@ Because it is. I made this in a whim after Tumblr banned my blog. Once I have mo
 * art i drew
 * maybe some funny blog posts i dunno
 
-## Tumblr are idiots and they banned me from their site for no reason.
-> Update: Tumblr has restored the blog. I'm making this my landing page regardless, but you can visit it [here](https://e10withadot.tumblr.com/).
+## I don't trust anyone now
+Tumblr's automod bots banned my blog, a blog that had years of my art in it. It was quite literally the only source i had left for some of my earlier works, and it was taken from me because some bot thought I was spamming. So, despite my account's restoration- my works are moving here. Even if GitHub bans this repo, I still have all the files stored locally. This is my best shot.
 
-I have been a Tumblr shill for so long and this is how they repay me. Disgusting. I don't wanna sign up to any other socials because the social media landscape is burning up as we speak, and frankly good riddance. Anyways, I got zero clue why they banned me, but it may just be this video down below. I assume they thought I was making a statement about Ukraine (I wasn't lol).
+Anyways, if you guys want a laugh- the video below is the last thing I sent on Tumblr. I really thought Herlock Sholmes got me banned.

@@ -659,6 +659,36 @@ th {
   box-sizing: border-box;
 }
 
+.navbar {
+  background-color: rgba(20, 20, 20, 0.7);
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 4rem;
+  z-index: 2;
+}
+
+.navbar.visible {
+  display: flex;
+}
+
+.navbtn {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.73rem;
+  padding-left: 1rem;
+  transition: opacity 0.2s;
+}
+.navbtn:hover {
+  opacity: 0.5;
+}
+
 @keyframes animatedBackground {
   from { background-position: 0 0; }
   to { background-position: 100% 0; }
@@ -688,7 +718,7 @@ body::before {
   top: -25%;
   left: -9%;
   z-index: -1;
-  background: url("/tile_480.PNG");
+  background: url("/assets/images/tile_480.PNG");
   background-repeat: repeat;
   background-size: 26.667vh;
   will-change: transform;
@@ -706,43 +736,26 @@ body::before {
 
 @media (min-height: 1280px) or (min-width: 1280px) {
   body::before {
-    background-image: url("/tile_720.PNG");
+    background-image: url("/assets/images/tile_720.PNG");
   }
 }
 
 @media (min-height: 1920px) or (min-width: 1920px) {
   body::before {
-    background-image: url("/tile_1080.PNG");
+    background-image: url("/assets/images/tile_1080.PNG");
   }
 }
 
 @media (min-height: 2560px) or (min-width: 2560px) {
   body::before {
-    background-image: url("/tile_1440.PNG");
+    background-image: url("/assets/images/tile_1440.PNG");
   }
 }
 
 @media (min-height: 3840px) or (min-width: 3840px){
   body::before {
-    background-image: url("/tile_4k.PNG");
+    background-image: url("/assets/images/tile_4k.PNG");
   }
-}
-
-#skip-to-content {
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  top: -10px;
-}
-#skip-to-content:focus {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  height: auto;
-  width: auto;
-  background: #e19447;
-  outline: thick solid #e19447;
 }
 
 a {
@@ -753,43 +766,73 @@ a:hover {
   text-decoration: underline;
 }
 
+.hide {
+  display: none;
+  padding: 0.5rem;
+}
 .btn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.3rem;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  display: inline-flex;
+  height: 3.8rem;
+  width: 3.8rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 1rem;
+  background-color: rgba(20, 20, 20, 0.7);
+  transition: background-color 0.2s, width 0.2s;
+  font-size: 1.5rem;
 }
 .btn:hover {
-  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  width: 8.65rem;
+  justify-content: left;
+}
+.btn:hover .hide {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+.youtube:hover {
+  background-color: rgba(100, 8, 8, 0.7);
+}
+.tumblr:hover {
+  background-color: rgba(17, 41, 134, 0.7);
+}
+.reddit:hover {
+  background-color: rgba(91, 41, 6, 0.7);
+}
+.github:hover {
+  background-color: rgba(6, 77, 16, 0.7);
 }
 .btn + .btn {
   margin-left: 1rem;
 }
 @media screen and (min-width: 64em) {
   .btn {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem;
+  }
+  .btn:hover {
+    padding-left: 0.85rem;
   }
 }
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .btn {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  .btn:hover {
+    padding-left: 0.85rem;
   }
 }
 @media screen and (max-width: 42em) {
   .btn {
-    display: block;
-    width: 100%;
     padding: 0.75rem;
-    font-size: 0.9rem;
+  }
+  .btn:hover {
+    width: 3.8rem;
+    justify-content: center;
+  }
+  .btn:hover .hide {
+    display: none;
   }
   .btn + .btn {
     margin-top: 1rem;
@@ -799,7 +842,7 @@ a:hover {
 
 .page-header {
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 @media screen and (min-width: 64em) {
   .page-header {
@@ -814,6 +857,7 @@ a:hover {
 @media screen and (max-width: 42em) {
   .page-header {
     padding: 2rem 1rem;
+    text-align: center;
   }
 }
 
@@ -909,7 +953,6 @@ a:hover {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957;
 }
 .main-content p {
   margin-bottom: 1em;
@@ -1028,11 +1071,16 @@ a:hover {
   background-color: #eff0f1;
   border: 0;
 }
-
+.main-content iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
+}
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: solid 1px #eff0f1;
+  text-align: center;
 }
 @media screen and (min-width: 64em) {
   .site-footer {
