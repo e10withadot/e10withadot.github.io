@@ -674,19 +674,21 @@ th {
 
 .navbtn {
   color: #fff;
-  display: inline-block;
   font-size: 1.5rem;
   height: 3rem;
-  width: auto;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0.73rem;
-  padding-left: 1rem;
+  padding: 0.73rem 0 0 1rem;
   transition: opacity 0.2s;
 }
 .navbtn:hover {
   opacity: 0.5;
+}
+
+.page-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 1rem;
+  text-decoration: none;
 }
 
 @keyframes animatedBackground {

@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#222222">
+    <meta name="theme-color" content="#1f1f1f">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="/assets/css/e10_theme.css">
     <link href="/assets/css/fontawesome.css" rel="stylesheet"/>
@@ -20,35 +20,34 @@
       <a href="https://e10withadot.tumblr.com" class="navbtn"><span class="fab fa-tumblr"></span></a>
       <a href="https://www.reddit.com/u/e10withadot" class="navbtn"><span class="fab fa-reddit-alien"></span></a>
       <a href="https://github.com/e10withadot" class="navbtn"><span class="fab fa-github"></span></a>
+      <div class="page-container">
+        <a href="/_layouts/404.html" class="navbtn">Art</a>
+        <a href="/_layouts/404.html" class="navbtn">Projects</a>
+      </div>
     </div>
 
     <header class="page-header" role="banner" id="head">
       <h1 class="project-name">e10withadot's stupid webpage</h1>
       <h2 class="project-tagline">low effort template page yay!!!!!!!!!!!!!!!!</h2>
-      <a href="https://www.youtube.com/@e10withadot" class="btn youtube"><span class="fab fa-youtube"></span> <div class="hide">YouTube</div></a>
-      <a href="https://e10withadot.tumblr.com" class="btn tumblr"><span class="fab fa-tumblr"></span> <div class="hide">Tumblr</div></a>
-      <a href="https://www.reddit.com/u/e10withadot" class="btn reddit"><span class="fab fa-reddit-alien"></span> <div class="hide">Reddit</div></a>
-      <a href="https://github.com/e10withadot" class="btn github"><span class="fab fa-github"></span> <div class="hide">GitHub</div></a>
+      <div id="socials">
+        <a href="https://www.youtube.com/@e10withadot" class="btn youtube"><span class="fab fa-youtube"></span> <div class="hide">YouTube</div></a>
+        <a href="https://e10withadot.tumblr.com" class="btn tumblr"><span class="fab fa-tumblr"></span> <div class="hide">Tumblr</div></a>
+        <a href="https://www.reddit.com/u/e10withadot" class="btn reddit"><span class="fab fa-reddit-alien"></span> <div class="hide">Reddit</div></a>
+        <a href="https://github.com/e10withadot" class="btn github"><span class="fab fa-github"></span> <div class="hide">GitHub</div></a>
+      </div>
     </header>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function() {
         const nav = document.getElementById("nav");
-        const head = document.getElementById('head');
-        
-        if (!nav || !head) {
-          const newDiv = document.createElement("div");
-          const newContent = document.createTextNode("Required elements not found");
-           newDiv.appendChild(newContent);
-          return;
-        }
-
-        let headerHeight = head.offsetHeight;
+        const socials = document.getElementById('socials');
 
         function checkHeaderVisibility() {
-          if (window.pageYOffset > headerHeight)
+          const socialsBottom = socials.getBoundingClientRect().bottom;
+          if (socialsBottom <= 0) {
             nav.classList.add("visible");
-          else
-            nav.classList.remove("visible");
+            return;
+          }
+          nav.classList.remove("visible");
         }
         checkHeaderVisibility();
         window.addEventListener('scroll', checkHeaderVisibility);
