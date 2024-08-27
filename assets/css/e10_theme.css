@@ -662,21 +662,27 @@ th {
 .navbar {
   background-color: rgba(15, 15, 15, 0.7);
   position: fixed;
-  display: none;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 4rem;
   z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
 .navbar.visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .navbtn {
   color: #fff;
   font-size: 1.5rem;
   height: 3rem;
-  padding: 0.73rem 0 0 1rem;
+  line-height: 3rem;
+  padding-left: 1.5rem;
   transition: opacity 0.2s;
 }
 .navbtn:hover {
@@ -684,11 +690,78 @@ th {
 }
 
 .page-container {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
+  text-align: right;
+  box-sizing: border-box;
   width: 100%;
   padding-right: 1rem;
   text-decoration: none;
+}
+
+#topbtn {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  overflow: visible;
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 2; 
+  border: none;
+  outline: none; 
+  background-color: transparent; 
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 3rem;
+  transition: opacity 0.2s;
+}
+
+#topbtn.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+#topbtn:hover {
+  opacity: 0.8;
+}
+
+.topbtn-text {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 1rem;
+  z-index: 4;
+  color: white;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.toplines {
+  width: 1rem;
+  height: 16rem;
+  position: fixed;
+  transform: translate(0 0);
+  transition: transform 0.5s;
+  rotate: 23.3deg;
+  bottom: 14.7rem;
+}
+
+.toplines.blue {
+  background-color: #48a0f6;
+  right: -5rem;
+  transition-delay: 0.2s;
+}
+
+.toplines.blue.visible {
+  transform: translate(0rem, 17rem);
+}
+
+.toplines.orange {
+  background-color: #ed7a48;
+  right: -6rem;
+}
+
+.toplines.orange.visible {
+  transform: translate(0rem, 17rem);
 }
 
 @keyframes animatedBackground {
@@ -761,7 +834,7 @@ body::before {
 }
 
 a {
-  color: #1e6bb8;
+  color: #0068c9;
   text-decoration: none;
 }
 a:hover {
@@ -848,17 +921,17 @@ a:hover {
 }
 @media screen and (min-width: 64em) {
   .page-header {
-    padding: 5rem 6rem;
+    padding: 3rem 6rem;
   }
 }
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .page-header {
-    padding: 3rem 4rem;
+    padding: 1.5rem 4rem;
   }
 }
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
   }
 }
@@ -886,7 +959,6 @@ a:hover {
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7;
 }
 @media screen and (min-width: 64em) {
   .project-tagline {
@@ -906,6 +978,7 @@ a:hover {
 
 .main-content {
   word-wrap: break-word;
+  margin-bottom: 2rem;
 }
 .main-content :first-child {
   margin-top: 0;
@@ -914,7 +987,7 @@ a:hover {
   .main-content {
     max-width: 64rem;
     padding: 1rem 3rem;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     font-size: 1.1rem;
   }
 }
@@ -1079,9 +1152,7 @@ a:hover {
   width: 100%;
 }
 .site-footer {
-  padding-top: 2rem;
   margin-top: 2rem;
-  border-top: solid 1px #eff0f1;
   text-align: center;
 }
 @media screen and (min-width: 64em) {

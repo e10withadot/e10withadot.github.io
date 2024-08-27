@@ -15,7 +15,7 @@
   <body>
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
     <div class="navbar" id="nav">
-      <img href="/_layouts/default.html" src="/assets/icons/e10 icon.png" class="navbtn"></img>
+      <img href="/index.html" src="/assets/icons/e10 icon.png" class="navbtn"></img>
       <a href="https://www.youtube.com/@e10withadot" class="navbtn"><span class="fab fa-youtube"></span></a>
       <a href="https://e10withadot.tumblr.com" class="navbtn"><span class="fab fa-tumblr"></span></a>
       <a href="https://www.reddit.com/u/e10withadot" class="navbtn"><span class="fab fa-reddit-alien"></span></a>
@@ -25,10 +25,14 @@
         <a href="/404.html" class="navbtn">Projects</a>
       </div>
     </div>
+    <button onclick="topFunction()" id="topbtn" title="Back to Top">
+      <span class="topbtn-text">^</span>
+      <div class="toplines blue" id="blue"></div><div class="toplines orange" id="orng"></div>
+    </button>
 
     <header class="page-header" role="banner" id="head">
-      <h1 class="project-name">e10withadot's stupid webpage</h1>
-      <h2 class="project-tagline">low effort template page yay!!!!!!!!!!!!!!!!</h2>
+      <h1 class="project-name">Hi, I'm e10.!</h1>
+      <h2 class="project-tagline">I'm a hobbyist programmer, video creator, and graphic designer.</h2>
       <div id="socials">
         <a href="https://www.youtube.com/@e10withadot" class="btn youtube"><span class="fab fa-youtube"></span> <div class="hide">YouTube</div></a>
         <a href="https://e10withadot.tumblr.com" class="btn tumblr"><span class="fab fa-tumblr"></span> <div class="hide">Tumblr</div></a>
@@ -37,37 +41,72 @@
       </div>
     </header>
     <script type="text/javascript">
+      function topFunction() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         const nav = document.getElementById("nav");
         const socials = document.getElementById('socials');
+        const topbutton = document.getElementById("topbtn");
+        const orange = document.getElementById("orng");
+        const blue = document.getElementById("blue");
 
-        function checkHeaderVisibility() {
+        function GUIscroll() {
           const socialsBottom = socials.getBoundingClientRect().bottom;
           if (socialsBottom <= 0) {
             nav.classList.add("visible");
+            topbutton.classList.add("visible");
+            blue.classList.add("visible");
+            orange.classList.add("visible");
             return;
           }
           nav.classList.remove("visible");
+          topbutton.classList.remove("visible");
+          blue.classList.remove("visible");
+          orange.classList.remove("visible");
         }
-        checkHeaderVisibility();
-        window.addEventListener('scroll', checkHeaderVisibility);
+
+        GUIscroll();
+        window.addEventListener('scroll', GUIscroll);
       });
     </script>
+    <main class="main-content" role="main">
+      <zero-md src="/pages/summary.md">
+        <template>
+            <link rel="stylesheet" href="/assets/css/e10_theme.css"/>
+        </template>
+      </zero-md>
+    </main>
     <main id="content" class="main-content" role="main">
-      <zero-md src="/README.md">
+      <zero-md src="/pages/yt_summary.md">
         <template>
             <link rel="stylesheet" href="/assets/css/e10_theme.css"/>
         </template>
       </zero-md>
       <iframe
-        src="https://www.youtube.com/embed/UVAGAW_CE2k"
+        src="https://www.youtube.com/embed?listType=playlist&list=UU7OpcUbdES1vdvVr9FdOtHw"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-      <footer class="site-footer">
-        <span class="site-footer-credits"><div>e10withadot 2024</div><div>Based on the <a href="https://github.com/pages-themes/cayman/">Cayman</a> template from <a href="https://pages.github.com">GitHub Pages</a>.</div></span>
-      </footer>
     </main>
+    <main class="main-content" role="main">
+      <zero-md src="/pages/proj_summary.md">
+        <template>
+            <link rel="stylesheet" href="/assets/css/e10_theme.css"/>
+        </template>
+      </zero-md>
+    </main>
+    <main class="main-content" role="main">
+      <zero-md src="/pages/art_summary.md">
+        <template>
+            <link rel="stylesheet" href="/assets/css/e10_theme.css"/>
+        </template>
+      </zero-md>
+    </main>
+    <main class="main-content" role="main">
+      <footer class="site-footer">
+      <span class="site-footer-credits"><div>e10withadot 2024</div><div>Based on the <a href="https://github.com/pages-themes/cayman/">Cayman</a> template from <a href="https://pages.github.com">GitHub Pages</a>.</div></span>
+    </footer></main>
   </body>
 </html>

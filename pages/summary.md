@@ -1,0 +1,2 @@
+## Welcome to the e10. landing site!
+Here you'll find all of e10.'s creative endeavors. From YouTube videos, programs, games, shortcuts, and artwork- there's a lot to look at. A little too much maybe. Like seriously, some of this stuff might be quite embarrassing.
