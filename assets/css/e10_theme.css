@@ -743,6 +743,7 @@ th {
 
 .dropbtn:hover {
   background-color: rgba(69, 75, 79, 0.7);
+  opacity: 1;
 }
 
 .dropbox.show {
