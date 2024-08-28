@@ -992,6 +992,7 @@ a:hover {
   text-decoration: none;
   width: 8.65rem;
   justify-content: left;
+  opacity: 1;
 }
 .btn:hover .hide {
   display: inline-block;
