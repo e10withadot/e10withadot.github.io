@@ -677,8 +677,11 @@ th {
 }
 
 .homebtn {
-  width: 4rem;
-  padding: 0 0.7rem;
+  display: flex;
+  width: 3rem;
+  margin: 1.5rem 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbtn {
@@ -961,6 +964,11 @@ body.disable-scroll {
 a {
   color: #ed7a48;
   text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+a:hover {
+  opacity: 0.7;
 }
 
 .hide {
@@ -1138,12 +1146,7 @@ a {
   padding: 3px 5px;
   vertical-align: middle;
 }
-.main-content a {
-  text-decoration: none;
-}
-.main-content a:hover {
-  text-decoration: underline;
-}
+
 .main-content img {
   max-width: 100%;
 }
