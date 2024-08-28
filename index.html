@@ -14,17 +14,33 @@
   </head>
   <body>
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <script type="module" src="/assets/js/dropdown.js"></script>
+
     <div class="navbar" id="nav">
-      <img href="/index.html" src="/assets/icons/e10 icon.png" class="navbtn"></img>
-      <a href="https://www.youtube.com/@e10withadot" class="navbtn"><span class="fab fa-youtube"></span></a>
-      <a href="https://e10withadot.tumblr.com" class="navbtn"><span class="fab fa-tumblr"></span></a>
-      <a href="https://www.reddit.com/u/e10withadot" class="navbtn"><span class="fab fa-reddit-alien"></span></a>
-      <a href="https://github.com/e10withadot" class="navbtn"><span class="fab fa-github"></span></a>
+      <img href="/index.html" src="/assets/icons/e10 icon.png" class="homebtn"></img>
+      <a href="https://www.youtube.com/@e10withadot" class="navbtn expand"><span class="fab fa-youtube"></span></a>
+      <a href="https://e10withadot.tumblr.com" class="navbtn expand"><span class="fab fa-tumblr"></span></a>
+      <a href="https://www.reddit.com/u/e10withadot" class="navbtn expand"><span class="fab fa-reddit-alien"></span></a>
+      <a href="https://github.com/e10withadot" class="navbtn expand"><span class="fab fa-github"></span></a>
+
       <div class="page-container">
-        <a href="/404.html" class="navbtn">Art</a>
-        <a href="/404.html" class="navbtn">Projects</a>
+        <a href="/404.html" class="navbtn expand">Art</a>
+        <a href="/404.html" class="navbtn expand">Projects</a>
+      </div>
+
+      <div class="page-container dropdown">
+        <button id="arrow" onclick="window.dropOrDont()" class="navbtn">V</button>
+        <div class="dropbox" id="down">
+          <a href="/404.html" class="dropbtn">Art</a>
+          <a href="/404.html" class="dropbtn">Projects</a>
+          <a href="https://www.youtube.com/@e10withadot" class="dropbtn youtube"><span class="fab fa-youtube"></span> YouTube</a>
+          <a href="https://e10withadot.tumblr.com" class="dropbtn tumblr"><span class="fab fa-tumblr"></span> Tumblr</a>
+          <a href="https://www.reddit.com/u/e10withadot" class="dropbtn reddit"><span class="fab fa-reddit-alien"></span> Reddit</a>
+          <a href="https://github.com/e10withadot" class="dropbtn github"><span class="fab fa-github"></span> GitHub</a>
+        </div>
       </div>
     </div>
+
     <button onclick="topFunction()" id="topbtn" title="Back to Top">
       <span class="topbtn-text">^</span>
       <div class="toplines blue" id="blue"></div><div class="toplines orange" id="orng"></div>

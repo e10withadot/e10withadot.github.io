@@ -671,18 +671,29 @@ th {
   opacity: 0;
   transition: opacity 0.2s;
 }
-
 .navbar.visible {
   visibility: visible;
   opacity: 1;
 }
 
+.homebtn {
+  width: 4rem;
+  padding: 0 0.7rem;
+}
+
 .navbtn {
+  display: inline-flex;
   color: #fff;
+  background-color: transparent;
   font-size: 1.5rem;
   height: 3rem;
+  min-width: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   line-height: 3rem;
-  padding-left: 1.5rem;
+  padding: 0 1rem;
+  border: none;
   transition: opacity 0.2s;
 }
 .navbtn:hover {
@@ -694,8 +705,56 @@ th {
   text-align: right;
   box-sizing: border-box;
   width: 100%;
-  padding-right: 1rem;
+  padding: 0 1.5rem;
   text-decoration: none;
+}
+
+.dropdown {
+  display: none;
+  position: relative;
+}
+.dropbox {
+  display: block;
+  visibility: hidden;
+  position: fixed;
+  overflow: hidden;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 0vh;
+  transition: height 0.2s ease-out;
+  background-color: rgba(15, 15, 15, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+.dropbtn {
+  display: block;
+  color: #fff;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  z-index: 4;
+}
+
+.dropbtn:hover {
+  background-color: rgba(69, 75, 79, 0.7);
+}
+
+.dropbox.show {
+  visibility: visible;
+  height: 100vh;
+}
+
+@media screen and (max-width: 42em) {
+  .navbtn.expand {
+    display: none;
+  }
+
+  .dropdown {
+    display: inline-block;
+  }
 }
 
 #topbtn {
@@ -703,6 +762,7 @@ th {
   opacity: 0;
   position: fixed;
   overflow: visible;
+  cursor: pointer;
   bottom: 20px; 
   right: 30px; 
   z-index: 2; 
@@ -715,53 +775,106 @@ th {
   font-size: 3rem;
   transition: opacity 0.2s;
 }
-
 #topbtn.visible {
   visibility: visible;
   opacity: 1;
 }
-
 #topbtn:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .topbtn-text {
   position: absolute;
   bottom: 0.2rem;
-  right: 1rem;
-  z-index: 4;
+  z-index: 3;
   color: white;
   font-weight: 500;
   font-size: 3rem;
 }
 
 .toplines {
-  width: 1rem;
-  height: 16rem;
   position: fixed;
-  transform: translate(0 0);
+  transform: translate(0, 0);
   transition: transform 0.5s;
   rotate: 23.3deg;
-  bottom: 14.7rem;
+  z-index: 2;
 }
-
 .toplines.blue {
   background-color: #48a0f6;
-  right: -5rem;
   transition-delay: 0.2s;
 }
-
-.toplines.blue.visible {
-  transform: translate(0rem, 17rem);
-}
-
 .toplines.orange {
   background-color: #ed7a48;
-  right: -6rem;
 }
 
-.toplines.orange.visible {
-  transform: translate(0rem, 17rem);
+@media screen and (min-width: 64em) {
+  .topbtn-text {
+    right: 1rem;
+  }
+
+  .toplines {
+    width: 1rem;
+    height: 16rem;
+    bottom: 14.7rem;
+  }
+  .toplines.blue {
+    right: -5rem;
+  }
+  .toplines.blue.visible {
+    transform: translate(0rem, 17rem);
+  }
+  .toplines.orange {
+    right: -6rem;
+  }
+  .toplines.orange.visible {
+    transform: translate(0rem, 17rem);
+  }
+}
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .topbtn-text {
+    right: 0.7rem;
+  }
+  
+  .toplines {
+    width: 1rem;
+    height: 14rem;
+    bottom: 12.86rem;
+  }
+  .toplines.blue {
+    right: -4.2rem;
+  }
+  .toplines.blue.visible {
+    transform: translate(0rem, 15rem);
+  }
+  .toplines.orange {
+    right: -5.2rem;
+  }
+  .toplines.orange.visible {
+    transform: translate(0rem, 15rem);
+  }
+}
+@media screen and (max-width: 42em) {
+  .topbtn-text {
+    right: -0.45rem;
+  }
+  
+  .toplines {
+    width: 1rem;
+    height: 12rem;
+    bottom: 11rem;
+  }
+  .toplines.blue {
+    right: -4rem;
+  }
+  .toplines.blue.visible {
+    transform: translate(0rem, 13rem);
+  }
+  .toplines.orange {
+    right: -5rem;
+  }
+  .toplines.orange.visible {
+    transform: translate(0rem, 13rem);
+  }
 }
 
 @keyframes animatedBackground {
@@ -795,17 +908,29 @@ body::before {
   z-index: -1;
   background: url("/assets/images/tile_480.PNG");
   background-repeat: repeat;
-  background-size: 26.667vh;
+  background-size: 26.667vw;
   will-change: transform;
-  animation: animatedBackground 60s infinite steps(1800, end);
   transform: rotate(-5deg);
   transform-origin: center;
 }
+body.disable-scroll {
+  overflow-y: hidden;
+}
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 64em) {
   body::before {
     animation: animatedBackground 180s infinite steps(4500, end);
-    background-size: 26.667vw;
+  }
+}
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  body::before {
+    animation: animatedBackground 120s infinite steps(3000, end);
+  }
+}
+@media screen and (max-width: 42em) {
+  body::before {
+    animation: animatedBackground 60s infinite steps(1500, end);
+    background-size: 26.667vh;
   }
 }
 
@@ -836,9 +961,6 @@ body::before {
 a {
   color: #0068c9;
   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 .hide {
@@ -1015,6 +1137,12 @@ a:hover {
   line-height: 10px;
   padding: 3px 5px;
   vertical-align: middle;
+}
+.main-content a {
+  text-decoration: none;
+}
+.main-content a:hover {
+  text-decoration: underline;
 }
 .main-content img {
   max-width: 100%;
