@@ -3,31 +3,28 @@ import { enableBodyScroll, disableBodyScroll } from '/assets/js/bodyScrollLock.e
 
 function dropOrDont() {
     var arrow = document.getElementById("arrow");
-    const topbtn = document.getElementById("topbtn");
     const down = document.getElementById("down");
+    const wrapper = document.getElementById("down-wrapper");
 
     down.classList.toggle("show");
     if (down.classList.contains("show"))
-        disableBodyScroll(down);
-    else enableBodyScroll(down);
-
-    if (topbtn)
-        topbtn.classList.toggle("visible");
-    
+        disableBodyScroll(wrapper);
+    else enableBodyScroll(wrapper);
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
 }
 
 window.dropOrDont = dropOrDont;
 
 window.addEventListener('resize', function(){
+    var arrow = document.getElementById("arrow");
     const down = document.getElementById("down");
-    if (down.classList.contains("show"))
-        if (window.innerWidth > em2px(42)) {
-            enableBodyScroll(down);
-            topbtn.classList.add("visible");
-        }
-        else {
-            disableBodyScroll(down);
-            topbtn.classList.remove("visible");
-        }
+    const wrapper = document.getElementById("down-wrapper");
+    if (window.innerWidth > em2px(42)) {
+        down.classList.remove("show");
+        enableBodyScroll(wrapper);
+    }
+    else {
+        down.classList.add("show");
+        disableBodyScroll(wrapper);
+    }
 });
