@@ -10,6 +10,7 @@ html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  height: -webkit-fill-available;
 }
 
 /**
@@ -923,8 +924,8 @@ body::before {
 }
 body.disable-scroll {
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
   top: 0;
   left: 0;
 }

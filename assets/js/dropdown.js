@@ -6,16 +6,20 @@ let scrollPosition = 0;
 function dropOrDont() {
     var arrow = document.getElementById("arrow");
     const topbtn = document.getElementById("topbtn");
+    const body = document.body;
 
     document.getElementById("down").classList.toggle("show");
     if (topbtn != null)
         topbtn.classList.toggle("visible");
-    document.body.classList.toggle("disable-scroll");
+    
     scrollPosition = window.scrollY;
-    if (document.body.classList.contains("disable-scroll"))
-        document.body.style.top = `-${scrollPosition}px`;
+    if (body.classList.contains("disable-scroll")) {
+        body.classList.remove("disable-scroll");
+        body.style.top = `-${scrollPosition}px`;
+    }
     else {
-        document.body.style.removeProperty('top');
+        body.classList.add("disable-scroll");
+        body.style.removeProperty('top');
         window.scrollTo(0, scrollPosition);
     }
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
