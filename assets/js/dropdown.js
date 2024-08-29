@@ -19,12 +19,14 @@ window.addEventListener('resize', function(){
     var arrow = document.getElementById("arrow");
     const down = document.getElementById("down");
     const wrapper = document.getElementById("down-wrapper");
-    if (window.innerWidth > em2px(42) && down.classList.contains("show")) {
-        down.classList.remove("show");
-        enableBodyScroll(wrapper);
-    }
-    else {
-        down.classList.add("show");
-        disableBodyScroll(wrapper);
+    if (down.classList.contains("show")){
+        if (window.innerWidth > em2px(42)) {
+            down.classList.remove("show");
+            enableBodyScroll(wrapper);
+        }
+        else {
+            down.classList.add("show");
+            disableBodyScroll(wrapper);
+        }
     }
 });
