@@ -784,7 +784,7 @@ th {
   font-size: 3rem;
   transition: opacity 0.2s;
 }
-#topbtn.visible {
+#topbtn.appears {
   visibility: visible;
   opacity: 1;
 }
@@ -829,13 +829,13 @@ th {
   .toplines.blue {
     right: -5rem;
   }
-  .toplines.blue.visible {
+  #topbtn.appears .toplines.blue {
     transform: translate(0rem, 17rem);
   }
   .toplines.orange {
     right: -6rem;
   }
-  .toplines.orange.visible {
+  #topbtn.appears .toplines.orange {
     transform: translate(0rem, 17rem);
   }
 }
@@ -852,13 +852,13 @@ th {
   .toplines.blue {
     right: -4.2rem;
   }
-  .toplines.blue.visible {
+  #topbtn.appears .toplines.blue {
     transform: translate(0rem, 15rem);
   }
   .toplines.orange {
     right: -5.2rem;
   }
-  .toplines.orange.visible {
+  #topbtn.appears .toplines.orange {
     transform: translate(0rem, 15rem);
   }
 }
@@ -875,13 +875,13 @@ th {
   .toplines.blue {
     right: -4rem;
   }
-  .toplines.blue.visible {
+  #topbtn.appears .toplines.blue {
     transform: translate(0rem, 13rem);
   }
   .toplines.orange {
     right: -5rem;
   }
-  .toplines.orange.visible {
+  #topbtn.appears .toplines.orange {
     transform: translate(0rem, 13rem);
   }
 }

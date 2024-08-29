@@ -11,8 +11,8 @@ function dropOrDont() {
         disableBodyScroll(down);
     else enableBodyScroll(down);
 
-    if (topbtn != null)
-        topbtn.classList.toggle("visible");
+    if (topbtn)
+        topbtn.classList.toggle("appears");
     
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
 }
@@ -24,7 +24,11 @@ window.addEventListener('resize', function(){
     if (down.classList.contains("show"))
         if (window.innerWidth > em2px(42)) {
             enableBodyScroll(down);
+            topbtn.classList.add("appears");
             return;
         }
-        else disableBodyScroll(down);
+        else {
+            disableBodyScroll(down);
+            topbtn.classList.remove("appears");
+        }
 });

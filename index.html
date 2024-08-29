@@ -65,22 +65,16 @@
         const nav = document.getElementById("nav");
         const socials = document.getElementById('socials');
         const topbutton = document.getElementById("topbtn");
-        const orange = document.getElementById("orng");
-        const blue = document.getElementById("blue");
 
         function GUIscroll() {
           const socialsBottom = socials.getBoundingClientRect().bottom;
           if (socialsBottom <= 0) {
             nav.classList.add("visible");
-            topbutton.classList.add("visible");
-            blue.classList.add("visible");
-            orange.classList.add("visible");
+            topbutton.classList.add("appears");
             return;
           }
           nav.classList.remove("visible");
-          topbutton.classList.remove("visible");
-          blue.classList.remove("visible");
-          orange.classList.remove("visible");
+          topbutton.classList.remove("appears");
         }
 
         GUIscroll();
