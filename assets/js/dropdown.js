@@ -19,7 +19,7 @@ window.addEventListener('resize', function(){
     var arrow = document.getElementById("arrow");
     const down = document.getElementById("down");
     const wrapper = document.getElementById("down-wrapper");
-    if (window.innerWidth > em2px(42)) {
+    if (window.innerWidth > em2px(42) && down.classList.contains("show")) {
         down.classList.remove("show");
         enableBodyScroll(wrapper);
     }
