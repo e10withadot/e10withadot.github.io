@@ -1,37 +1,30 @@
 import { em2px } from '/assets/js/em2px.js';
-
-const $body = document.querySelector('body');
-let scrollPosition = 0;
+import { enableBodyScroll, disableBodyScroll } from '/assets/js/bodyScrollLock.es6.js';
 
 function dropOrDont() {
     var arrow = document.getElementById("arrow");
     const topbtn = document.getElementById("topbtn");
-    const body = document.body;
+    const down = document.getElementById("down");
 
-    document.getElementById("down").classList.toggle("show");
+    down.classList.toggle("show");
+    if (down.classList.contains("show"))
+        disableBodyScroll(down);
+    else enableBodyScroll(down);
+
     if (topbtn != null)
         topbtn.classList.toggle("visible");
     
-    scrollPosition = window.scrollY;
-    if (body.classList.contains("disable-scroll")) {
-        body.classList.remove("disable-scroll");
-        body.style.top = `-${scrollPosition}px`;
-    }
-    else {
-        body.classList.add("disable-scroll");
-        body.style.removeProperty('top');
-        window.scrollTo(0, scrollPosition);
-    }
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
 }
 
 window.dropOrDont = dropOrDont;
 
 window.addEventListener('resize', function(){
-    if (document.getElementById("down").classList.contains("show"))
+    const down = document.getElementById("down");
+    if (down.classList.contains("show"))
         if (window.innerWidth > em2px(42)) {
-            document.body.classList.remove("disable-scroll");
+            enableBodyScroll(down);
             return;
         }
-        else document.body.classList.add("disable-scroll");
+        else disableBodyScroll(down);
 });

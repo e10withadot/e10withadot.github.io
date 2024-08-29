@@ -922,13 +922,6 @@ body::before {
   transform: rotate(-5deg);
   transform-origin: center;
 }
-body.disable-scroll {
-  overflow: hidden;
-  height: 100vh;
-  height: -webkit-fill-available;
-  top: 0;
-  left: 0;
-}
 
 @media screen and (min-width: 64em) {
   body::before {
