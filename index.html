@@ -14,6 +14,7 @@
   </head>
   <body>
     <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <script type="module" src="/assets/js/scrollMaster.js"></script>
     <script type="module" src="/assets/js/dropdown.js"></script>
 
     <div class="navbar" id="nav">
@@ -41,7 +42,7 @@
       </div>
     </div>
 
-    <button onclick="topFunction()" id="topbtn" title="Back to Top">
+    <button onclick="window.topFunction()" id="topbtn" title="Back to Top">
       <span class="topbtn-text">^</span>
       <div class="toplines blue" id="blue"></div><div class="toplines orange" id="orng"></div>
     </button>
@@ -57,29 +58,8 @@
       </div>
     </header>
     <script type="text/javascript">
-      function topFunction() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        const nav = document.getElementById("nav");
-        const socials = document.getElementById('socials');
-        const topbutton = document.getElementById("topbtn");
-
-        function GUIscroll() {
-          const socialsBottom = socials.getBoundingClientRect().bottom;
-          if (socialsBottom <= 0) {
-            nav.classList.add("visible");
-            topbutton.classList.add("appears");
-            return;
-          }
-          nav.classList.remove("visible");
-          topbutton.classList.remove("appears");
-        }
-
-        GUIscroll();
-        window.addEventListener('scroll', GUIscroll);
-      });
+      
+      
     </script>
     <main class="main-content" role="main">
       <zero-md src="/pages/summary.md">
