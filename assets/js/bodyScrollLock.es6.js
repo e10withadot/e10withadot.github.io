@@ -27,7 +27,6 @@ SOFTWARE.
 // Adopted and modified solution from Bohdan Didukh (2017)
 // https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-behind-a-fixed-overlay-and-maintain-scroll-posi
 
-var isLocked = false;
 let hasPassiveEvents = false;
 if (typeof window !== 'undefined') {
   const passiveTestOptions = {
@@ -229,7 +228,6 @@ export const disableBodyScroll = (targetElement, options) => {
       documentListenerAdded = true;
     }
   }
-  window.isLocked = true;
 };
 
 export const clearAllBodyScrollLocks = () => {
@@ -256,7 +254,6 @@ export const clearAllBodyScrollLocks = () => {
   }
 
   locks = [];
-  window.isLocked = false;
 };
 
 export const enableBodyScroll = targetElement => {
@@ -283,10 +280,4 @@ export const enableBodyScroll = targetElement => {
   } else {
     restoreOverflowSetting();
   }
-  window.isLocked = false;
 };
-
-// e10.'s little modification
-export const isScrollLocked = () => {
-  return isLocked;
-}

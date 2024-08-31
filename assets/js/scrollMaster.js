@@ -1,5 +1,3 @@
-import { isScrollLocked } from '/assets/js/bodyScrollLock.es6.js';
-
 function topFunction() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
@@ -12,9 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const topbutton = document.getElementById("topbtn");
 
     function GUIscroll() {
-        if (isScrollLocked())
-            return;
-
         const socialsBottom = socials.getBoundingClientRect().bottom;
         if (socialsBottom <= 0) {
             nav.classList.add("visible");
