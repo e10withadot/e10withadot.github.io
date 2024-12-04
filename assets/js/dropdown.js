@@ -15,6 +15,7 @@ function dropOrDont() {
 
 window.dropOrDont = dropOrDont;
 
+/* doesn't work on webkit - deprecated
 window.addEventListener('resize', function(){
     if (window.innerWidth > em2px(42) && down.classList.contains("show")) {
         down.classList.remove("show");
@@ -25,3 +26,4 @@ window.addEventListener('resize', function(){
         disableBodyScroll(wrapper);
     }
 });
+*/
