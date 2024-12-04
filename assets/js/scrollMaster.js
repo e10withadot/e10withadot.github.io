@@ -6,7 +6,7 @@ window.topFunction = topFunction;
 
 // show/hide navbar on scroll point
 document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.getElementById("nav");
+    const nav = document.getElementById("nav-wrapper");
     const socials = document.getElementById('socials');
     const topbutton = document.getElementById("topbtn");
 

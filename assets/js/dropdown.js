@@ -12,7 +12,6 @@ function dropOrDont() {
     }
     else enableBodyScroll(wrapper);
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
-    GUIscroll();
 }
 
 window.dropOrDont = dropOrDont;
