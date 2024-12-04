@@ -1,9 +1,10 @@
-import { em2px } from '/assets/js/em2px.js';
+// import { em2px } from '/assets/js/em2px.js';
 import { enableBodyScroll, disableBodyScroll } from '/assets/js/bodyScrollLock.es6.js';
 
 const down = document.getElementById("down");
 const wrapper = document.getElementById("nav-wrapper");
 
+// dropdown logic
 function dropOrDont() {
     down.classList.toggle("show");
     if (down.classList.contains("show")){
@@ -11,6 +12,7 @@ function dropOrDont() {
     }
     else enableBodyScroll(wrapper);
     arrow.innerHTML = arrow.innerHTML === "V" ? "X" : "V";
+    GUIscroll();
 }
 
 window.dropOrDont = dropOrDont;
