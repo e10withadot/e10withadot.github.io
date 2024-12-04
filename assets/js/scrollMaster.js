@@ -6,18 +6,18 @@ window.topFunction = topFunction;
 
 // show/hide navbar on scroll point
 document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.getElementById("nav-wrapper");
+    const wrapper = document.getElementById("nav-wrapper");
     const socials = document.getElementById('socials');
     const topbutton = document.getElementById("topbtn");
 
     function GUIscroll() {
         const socialsBottom = socials.getBoundingClientRect().bottom;
         if (socialsBottom <= 0) {
-            nav.classList.add("visible");
+            wrapper.classList.add("visible");
             topbutton.classList.add("visible");
             return;
         }
-        nav.classList.remove("visible");
+        wrapper.classList.remove("visible");
         topbutton.classList.remove("visible");
     }
 

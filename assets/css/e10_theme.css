@@ -663,7 +663,7 @@ th {
 #nav-wrapper {
   visibility: hidden;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -680,7 +680,6 @@ th {
   align-items: center;
   width: 100%;
   height: 4rem;
-  z-index: 2;
 }
 
 .homebtn {
