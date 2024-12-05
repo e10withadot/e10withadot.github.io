@@ -682,6 +682,11 @@ th {
   height: 4rem;
 }
 
+.navbar.show {
+  position: relative;
+  width: 100vw;
+}
+
 .homebtn {
   display: flex;
   width: 3rem;

@@ -3,10 +3,12 @@ import { enableBodyScroll, disableBodyScroll } from '/assets/js/bodyScrollLock.e
 
 const down = document.getElementById("down");
 const wrapper = document.getElementById("nav-wrapper");
+const nav = document.getElementById("nav");
 
 // dropdown logic
 function dropOrDont() {
     down.classList.toggle("show");
+    nav.classList.toggle("show");
     if (down.classList.contains("show")){
         disableBodyScroll(wrapper);
     }
