@@ -683,7 +683,8 @@ th {
 }
 
 .navbar.show {
-  position: absolute;
+  position: relative;
+  top: 0;
   width: 100vw;
 }
 
